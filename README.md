@@ -1,2 +1,2 @@
 # hellow-word
-the first short for github
+the first shoot for github
