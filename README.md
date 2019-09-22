@@ -1,2 +1,3 @@
 # hellow-word
-the first shoot for github
+to make a duty roster manually is painful
+but this program may help us to build a roster convenient
