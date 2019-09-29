@@ -9,3 +9,15 @@ class Worker(object):
     self.name=name
     self.worktime=worktime
     self.state=True
+
+  def set_work(self,day,period):
+    self.worktime[day,period]=True
+
+  def stop_work(self):
+    self.state=False
+
+  def couldwork(self):
+    return self.state
+
+  def could_setwork(self,day,period):
+    return self.worktime[day,period]
