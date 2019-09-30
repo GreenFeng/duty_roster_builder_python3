@@ -12,6 +12,3 @@ change_bg = tk.Button(root,text='chang color',command=color_change)
 change_bg.pack()
 
 root.mainloop()
-
-def color_change():
-	bey.config(bg='white')
