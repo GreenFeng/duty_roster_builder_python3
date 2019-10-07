@@ -1,30 +1,44 @@
 import tkinter as tk
 
-def color_change():
-	bey.config(bg='white')
-	change_bg.config(bg='#ffffff',fg='#ffffff')
+def date_add():
+	print("add date")
 
 root = tk.Tk('order')
 root.title('order system')
 
 group_cmd = tk.Frame(root)
-group_cmd.config(bd=10,relief=tk.RAISED)
-group_cmd.pack()
+group_cmd.config(bd=3,relief=tk.RAISED)
+group_cmd.pack(expand=tk.YES,fill=tk.X)
 
 welcome = tk.Label(group_cmd,text="welcome to order system")
 welcome.pack(side=tk.TOP)
-welcome.config(fg='green',bg='white')
+welcome.config(fg='green')
 
-bey = tk.Label(root,text="if you'd like to leve")
-bey.pack()
-bey.config(fg='#f00101',bg='#20f0f0')
+group_b = tk.Frame(root)
+group_b.pack(side=tk.RIGHT)
+group = []
+for n in range(3):
+	group.append( tk.Frame(group_b).config(bd=10).grid() )
+	# group[n].config(bd=10)
+	# group[n].grid()
 
-change_bg = tk.Button(root,text='chang color',command=color_change)
-# change_bg.grid(row=3,column=3)
-change_bg.pack(side=tk.LEFT)
-change_bg.config(bg='#506070',fg='#ffffff')
+group_t = tk.Frame(root)
+group_t.pack(side=tk.LEFT)
+t_lable = []
+t_lable_name = ["AM","PM","EV"]
+for n in range(3):
+	t_lable.append( tk.Label(group_t,text=t_lable_name[n]) )
+	t_lable[n].pack()
 
-white_bord = tk.Text(root)
-white_bord.pack(expand=tk.YES,fill=tk.BOTH)
+group_button = []
+time = ["am1","am2","pm1","pm2","ev1","ev2"]
+for day in range(7):
+	for period in range(6):
+		num = int(period/2)
+		group_button.append(tk.Button(group[num],text=time[period],command=date_add))
+		group_button[day*6+period].grid(row=period,column=day)
+
+# white_bord = tk.Text(root)
+# white_bord.pack(expand=tk.YES,fill=tk.BOTH)
 
 root.mainloop()

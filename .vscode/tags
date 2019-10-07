@@ -1,0 +1,23 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Worker	../Worker.py	/^class Worker(object):$/;"	kind:class	line:7
+Worker.py	../Worker.py	1;"	kind:file	line:1
+__init__	../Worker.py	/^  def __init__(self,name,worktime):$/;"	kind:member	line:8
+bey	../window.py	/^bey = tk.Label(root,text="if you'd like to leve")$/;"	kind:variable	line:18
+change_bg	../window.py	/^change_bg = tk.Button(root,text='chang color',command=color_change)$/;"	kind:variable	line:22
+color_change	../window.py	/^def color_change():$/;"	kind:function	line:3
+could_setwork	../Worker.py	/^  def could_setwork(self,day,period):$/;"	kind:member	line:22
+couldwork	../Worker.py	/^  def couldwork(self):$/;"	kind:member	line:19
+group_cmd	../window.py	/^group_cmd = tk.Frame(root)$/;"	kind:variable	line:10
+group_text	../window.py	/^group_text = tk.Frame(root)$/;"	kind:variable	line:27
+root	../window.py	/^root = tk.Tk('order')$/;"	kind:variable	line:7
+set_work	../Worker.py	/^  def set_work(self,day,period):$/;"	kind:member	line:13
+stop_work	../Worker.py	/^  def stop_work(self):$/;"	kind:member	line:16
+tk	../window.py	/^import tkinter as tk$/;"	kind:namespace	line:1
+welcome	../window.py	/^welcome = tk.Label(group_cmd,text="welcome to order system")$/;"	kind:variable	line:14
+white_bord	../window.py	/^white_bord = tk.Text(root)$/;"	kind:variable	line:31
+window.py	../window.py	1;"	kind:file	line:1
