@@ -3,7 +3,7 @@ class Windom(object):
 	def __init__(self):
 		self.root = tk.Tk('order')
 		self.root.title('order system')
-		# tk.Label(self.root,text="input the name",fg="red").pack(side=tk.TOP)
+		tk.Label(self.root,text="input the name",fg="red").pack(side=tk.TOP)
 		self.init_cmd()
 		self.init_b_t()
 		self.t_config()
@@ -37,14 +37,15 @@ class Windom(object):
 		daydate = ["星期一","星期二","星期三","星期四","星期五","星期六","星期日"]
 		self.Bottoms = [None]*49
 		for day in range(7):
-			self.Bottoms[day] = tk.Label(self.group[0],text=daydate[day])
-			self.Bottoms[day].grid(row=0,column=day,padx=5,pady=1)
-			for period in range(6):
-				com = lambda arg=(day+1)*6+period:self.date_add(arg)
-				self.Bottoms[(day+1)*6+period] = tk.Button(self.group[1],text=time[period],command=com)
-				self.Bottoms[(day+1)*6+period].grid(row=period+1,column=day,padx=5,pady=2)
+			self.Bottoms[day*7] = tk.Label(self.group[0],text=daydate[day])
+			self.Bottoms[day*7].grid(row=0,column=day,padx=5,pady=1)
+			for period in range(1,7):
+				com = lambda arg=(day*7+period):self.date_add(arg)
+				self.Bottoms[day*7+period] = tk.Button(self.group[1],text=time[period-1],command=com)
+				self.Bottoms[day*7+period].grid(row=period+1,column=day,padx=5,pady=2)
 
 	def date_add(self,arg):
+		print(arg)
 		self.Bottoms[arg].config(bg='red')
 	# white_bord = tk.Text(root)
 	# white_bord.pack()
