@@ -1,9 +1,12 @@
 import tkinter as tk
 class Windom(object):
+	DAY = []
+	PERIOD = []
+	Name = tk.StringVar
+
 	def __init__(self):
 		self.root = tk.Tk('order')
 		self.root.title('order system')
-		tk.Label(self.root,text="input the name",fg="red").pack(side=tk.TOP)
 		self.init_cmd()
 		self.init_b_t()
 		self.t_config()
@@ -13,7 +16,11 @@ class Windom(object):
 	def init_cmd(self):
 		self.group_cmd = tk.Frame(self.root,bd=3,relief=tk.RAISED)
 		self.group_cmd.pack(expand=tk.YES,fill=tk.X)
-		tk.Label(self.group_cmd,text="welcome to order system",fg='green').pack(side=tk.TOP)
+		tk.Label(self.group_cmd,text="welcome to order system",fg='green').pack()
+		tk.Label(self.group_cmd,text="input the name",fg="red").pack(tk.LEFT)
+		tk.Entry(self.group_cmd).pack(tk.RIGHT)
+		# tk.Label(self.group_cmd,text="input the name",fg="red").grid(row=1,column=0)
+		# tk.Entry(self.group_cmd).grid(row=1,column=1,padx=0,pady=0)
 		
 	def init_b_t(self):
 		self.b_t = tk.Frame(self.root)
@@ -45,9 +52,8 @@ class Windom(object):
 				self.Bottoms[day*7+period].grid(row=period+1,column=day,padx=5,pady=2)
 
 	def date_add(self,arg):
-		print(arg)
+		self.DAY.append(int(arg/7)+1)
+		self.PERIOD.append(int(arg%7))
 		self.Bottoms[arg].config(bg='red')
-	# white_bord = tk.Text(root)
-	# white_bord.pack()
-
+	
 win = Windom()
