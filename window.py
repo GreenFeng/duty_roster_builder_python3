@@ -17,8 +17,8 @@ class Windom(object):
 		self.group_cmd = tk.Frame(self.root,bd=3,relief=tk.RAISED)
 		self.group_cmd.pack(expand=tk.YES,fill=tk.X)
 		tk.Label(self.group_cmd,text="welcome to order system",fg='green').pack()
-		tk.Label(self.group_cmd,text="input the name",fg="red").pack(tk.LEFT)
-		tk.Entry(self.group_cmd).pack(tk.RIGHT)
+		tk.Label(self.group_cmd,text="input the name",fg="red").pack(side=tk.LEFT)
+		tk.Entry(self.group_cmd,width=).pack(side=tk.LEFT)
 		# tk.Label(self.group_cmd,text="input the name",fg="red").grid(row=1,column=0)
 		# tk.Entry(self.group_cmd).grid(row=1,column=1,padx=0,pady=0)
 		
