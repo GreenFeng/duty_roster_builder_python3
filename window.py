@@ -2,7 +2,6 @@ import tkinter as tk
 class Windom(object):
 	DAY = []
 	PERIOD = []
-	Name = tk.StringVar
 
 	def __init__(self):
 		self.root = tk.Tk('order')
@@ -16,9 +15,11 @@ class Windom(object):
 	def init_cmd(self):
 		self.group_cmd = tk.Frame(self.root,bd=3,relief=tk.RAISED)
 		self.group_cmd.pack(expand=tk.YES,fill=tk.X)
+		self.Name = tk.StringVar()
+		self.Name.set("请输入被排课员工姓名")
 		tk.Label(self.group_cmd,text="welcome to order system",fg='green').pack()
 		tk.Label(self.group_cmd,text="input the name",fg="red").pack(side=tk.LEFT)
-		tk.Entry(self.group_cmd,width=).pack(side=tk.LEFT)
+		tk.Entry(self.group_cmd,width=40,textvariable=self.Name).pack(side=tk.LEFT)
 		# tk.Label(self.group_cmd,text="input the name",fg="red").grid(row=1,column=0)
 		# tk.Entry(self.group_cmd).grid(row=1,column=1,padx=0,pady=0)
 		
@@ -55,5 +56,6 @@ class Windom(object):
 		self.DAY.append(int(arg/7)+1)
 		self.PERIOD.append(int(arg%7))
 		self.Bottoms[arg].config(bg='red')
+		print(self.Name.get())
 	
 win = Windom()
