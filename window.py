@@ -1,7 +1,9 @@
 import tkinter as tk
+from tkinter import messagebox
 class Windom(object):
 	DAY = []
 	PERIOD = []
+	NAME = []
 
 	def __init__(self):
 		self.root = tk.Tk('order')
@@ -20,6 +22,8 @@ class Windom(object):
 		tk.Label(self.group_cmd,text="welcome to order system",fg='green').pack()
 		tk.Label(self.group_cmd,text="input the name",fg="red").pack(side=tk.LEFT)
 		tk.Entry(self.group_cmd,width=40,textvariable=self.Name).pack(side=tk.LEFT)
+		tk.Button(self.group_cmd,command=self.name_get,text="verify").pack(side=tk.LEFT)
+		self.State = False
 		# tk.Label(self.group_cmd,text="input the name",fg="red").grid(row=1,column=0)
 		# tk.Entry(self.group_cmd).grid(row=1,column=1,padx=0,pady=0)
 		
@@ -53,9 +57,14 @@ class Windom(object):
 				self.Bottoms[day*7+period].grid(row=period+1,column=day,padx=5,pady=2)
 
 	def date_add(self,arg):
-		self.DAY.append(int(arg/7)+1)
-		self.PERIOD.append(int(arg%7))
-		self.Bottoms[arg].config(bg='red')
-		print(self.Name.get())
-	
-win = Windom()
+		if not self.State:
+			messagebox.showinfo(title="f**k",message="the name! input the name!")
+		else:
+			self.Bottoms[arg].config(bg='red')
+			self.DAY.append(int(arg/7)+1)
+			self.PERIOD.append(int(arg%7))
+			print(self.Name.get())
+
+	def name_get(self):
+		self.NAME.append(self.Name.get())
+		self.State = True

@@ -21,3 +21,6 @@ class Worker(object):
 
   def could_setwork(self,day,period):
     return self.worktime[day,period]
+
+  def __str__(self):
+    return str(self.name)+str(self.worktime)
